@@ -1,0 +1,3 @@
+nombre:alice 
+edad:26 
+tnt
