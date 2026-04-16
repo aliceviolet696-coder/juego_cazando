@@ -1,0 +1,1 @@
+git clone: para clonar los archivos de mi carpeta local a mi carpeta en la nube  
