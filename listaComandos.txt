@@ -1,1 +1,1 @@
-git clone: para clonar los archivos de mi carpeta local a mi carpeta en la nube  
+git commit: nos ayuda a darle nombre al cambio que hemos hecho -m "datos personal" 
