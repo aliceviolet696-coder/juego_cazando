@@ -3,32 +3,31 @@
 <head>
   <title>Juego Cazando</title>
   <link rel="stylesheet" href="cazando.css">
-
 </head>
 <body onload="iniciarJuego()">
 
   <h1>Juego Cazando</h1>
   <p>Autor: Alice Valencia</p>
+
   <canvas id="areaJuego" width="500" height="500"></canvas>
 
-
   <div class="controles">
-    <button>⬆</button>
+    <button onclick="moverArriba()">⬆</button>
     <br>
-    <button>⬅</button>
-    <button>⬇</button>
-    <button>➡</button>
+    <button onclick="moverIzquierda()">⬅</button>
+    <button onclick="moverAbajo()">⬇</button>
+    <button onclick="moverDerecha()">➡</button>
   </div>
-
 
   <div class="panel">
     <span>Puntos: <span id="puntos">0</span></span>
     <span>Tiempo: <span id="tiempo">10</span></span>
   </div>
 
-  <p id="mensaje"></p>
-  
+  <button onclick="reiniciarJuego()">🔄 REINICIAR</button>
 
-<script src="cazando.js"></script>
+  <p id="mensaje"></p>
+
+  <script src="cazando.js"></script>
 </body>
 </html>
