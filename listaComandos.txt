@@ -1,8 +1,0 @@
-git push:
-Envía (sube) los cambios confirmados (commits) de tu repositorio local hacia un repositorio remoto (por ejemplo, en GitHub). Sirve para compartir tu trabajo o actualizar la versión en línea.
-
-git status:
-Muestra el estado actual del repositorio. Indica qué archivos han sido modificados, cuáles están listos para confirmarse (staged), y cuáles aún no han sido añadidos.
-
-git add:
-Agrega archivos o cambios al área de preparación (staging area). Es el paso previo antes de hacer un commit, donde decides qué cambios quieres guardar oficialmente.
