@@ -7,27 +7,40 @@
 
 <body onload="iniciarJuego()">
 
-  <h1 class="titulo">🎯 JUEGO CAZANDO</h1>
-  <p class="autor">Autor: Alice Valencia</p>
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="contenedor">
 
-  <canvas id="areaJuego" width="500" height="500"></canvas>
+    <h1 class="titulo">🎯 JUEGO CAZANDO</h1>
+    <p class="autor">Autor: Alice Valencia</p>
 
-  <div class="panel">
-    <span>🔥 Puntos: <span id="puntos">0</span></span>
-    <span>⏳ Tiempo: <span id="tiempo">10</span></span>
+    <!-- IMAGEN DECORATIVA -->
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616430.png" class="img-gato">
+
+    <!-- CANVAS -->
+    <div class="canvas-container">
+      <canvas id="areaJuego" width="500" height="500"></canvas>
+    </div>
+
+    <!-- PANEL -->
+    <div class="panel">
+      <span>🔥 Puntos: <span id="puntos">0</span></span>
+      <span>⏳ Tiempo: <span id="tiempo">10</span></span>
+    </div>
+
+    <!-- CONTROLES -->
+    <div class="controles">
+      <button onclick="moverArriba()">⬆</button>
+      <br>
+      <button onclick="moverIzquierda()">⬅</button>
+      <button onclick="moverAbajo()">⬇</button>
+      <button onclick="moverDerecha()">➡</button>
+    </div>
+
+    <button class="btn-restart" onclick="reiniciarJuego()">🔄 REINICIAR</button>
+
+    <p id="mensaje"></p>
+
   </div>
-
-  <div class="controles">
-    <button onclick="moverArriba()">⬆</button>
-    <br>
-    <button onclick="moverIzquierda()">⬅</button>
-    <button onclick="moverAbajo()">⬇</button>
-    <button onclick="moverDerecha()">➡</button>
-  </div>
-
-  <button class="btn-restart" onclick="reiniciarJuego()">🔄 REINICIAR</button>
-
-  <p id="mensaje"></p>
 
   <script src="cazando.js"></script>
 </body>

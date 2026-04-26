@@ -1,22 +1,58 @@
+/* FONDO GAMER */
 body {
-  text-align: center;
-  font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient(circle, #0f172a, #020617);
-  color: #e0f7ff;
   margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+
+  background-image: url("https://images.unsplash.com/photo-1542751371-adc38448a05e");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  color: white;
+}
+
+/* CONTENEDOR CON EFECTO */
+.contenedor {
+  background: rgba(0, 0, 0, 0.7);
   padding: 20px;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #00f7ff;
 }
 
 /* TITULO */
 .titulo {
-  font-size: 40px;
+  font-size: 42px;
   color: #ff003c;
-  text-shadow: 0 0 10px #ff003c, 0 0 20px #ff003c, 0 0 40px #ff003c;
+  text-shadow: 0 0 10px #ff003c, 0 0 30px #ff003c;
 }
 
+/* AUTOR */
 .autor {
   color: #38bdf8;
-  text-shadow: 0 0 8px #38bdf8;
+  text-shadow: 0 0 10px #38bdf8;
+}
+
+/* IMAGEN */
+.img-gato {
+  width: 80px;
+  margin: 10px;
+  filter: drop-shadow(0 0 10px #00f7ff);
+}
+
+/* CANVAS */
+.canvas-container {
+  display: flex;
+  justify-content: center;
+}
+
+canvas {
+  background: #020617;
+  border: 3px solid #00f7ff;
+  border-radius: 10px;
+  box-shadow: 0 0 25px #00f7ff;
 }
 
 /* PANEL */
@@ -30,14 +66,6 @@ body {
   text-shadow: 0 0 10px #22c55e;
 }
 
-/* CANVAS */
-canvas {
-  background: #020617;
-  border: 3px solid #38bdf8;
-  box-shadow: 0 0 20px #38bdf8;
-  border-radius: 10px;
-}
-
 /* CONTROLES */
 .controles {
   margin-top: 20px;
@@ -48,11 +76,13 @@ button {
   margin: 6px;
   padding: 12px 18px;
   font-size: 20px;
-  cursor: pointer;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
+
   background: linear-gradient(45deg, #0ea5e9, #22c55e);
   color: white;
+
   transition: 0.2s;
   box-shadow: 0 0 10px #0ea5e9;
 }
@@ -74,7 +104,7 @@ button:hover {
 
 /* MENSAJE */
 #mensaje {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
   margin-top: 15px;
   color: #facc15;
