@@ -9,7 +9,7 @@ let comidaY = 100;
 
 // JUEGO
 let puntos = 0;
-let tiempo = 10;
+let tiempo = 15;
 let intervalo = null;
 
 // CONSTANTES
