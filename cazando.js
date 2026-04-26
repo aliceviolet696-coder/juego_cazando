@@ -10,6 +10,7 @@ let comidaY = 100;
 // JUEGO
 let puntos = 0;
 let tiempo = 15;
+let tiempoMaximo = 15;
 let intervalo = null;
 
 // CONSTANTES
@@ -86,6 +87,13 @@ function detectarColision() {
     ) {
         puntos++;
         document.getElementById("puntos").textContent = puntos;
+        // bajar tiempo 
+        tiempoMaximo--;
+       if (tiempoMaximo < 3) {
+        tiempoMaximo = 3;
+       }
+       tiempo = tiempoMaximo;
+        document.getElementById("tiempo").textcontent = tiempo;
 
         moverComida();
     }
@@ -119,7 +127,8 @@ function iniciarTiempo() {
 // REINICIAR
 function reiniciarJuego() {
     puntos = 0;
-    tiempo = 10;
+    tiempoMaximo = 15;
+    tiempo = tiempoMaximo;
 
     gatoX = 200;
     gatoY = 200;
