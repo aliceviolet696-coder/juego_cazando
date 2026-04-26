@@ -1,0 +1,3 @@
+Agrega imágenes y un fondo gamer a mi juego usando HTML y CSS, sin modificar JavaScript.
+
+Quiero un fondo oscuro con estilo gaming y una imagen decorativa de gato.
