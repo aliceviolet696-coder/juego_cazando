@@ -1,6 +1,14 @@
 let canvas = document.getElementById("areaJuego");
 let ctx = canvas.getContext("2d");
 
+// IMAGEN DEL GATO
+let imagenGato = new Image();
+imagenGato.src = "gatito.png"; // asegúrate que esté en la misma carpeta
+
+imagenGato.onload = function () {
+    dibujar(); // dibuja solo cuando la imagen ya cargó
+};
+
 // POSICIONES
 let gatoX = 200;
 let gatoY = 200;
@@ -14,8 +22,8 @@ let tiempoMaximo = 15;
 let intervalo = null;
 
 // CONSTANTES
-const ANCHO_GATO = 50;
-const ALTO_GATO = 50;
+const ANCHO_GATO = 60;
+const ALTO_GATO = 60;
 const ANCHO_COMIDA = 30;
 const ALTO_COMIDA = 30;
 const VELOCIDAD = 10;
@@ -26,14 +34,14 @@ function graficarRectangulo(x, y, ancho, alto, color) {
     ctx.fillRect(x, y, ancho, alto);
 }
 
-// GATO
+// 🐱 GATO (AHORA CON IMAGEN)
 function graficarGato() {
-    graficarRectangulo(gatoX, gatoY, ANCHO_GATO, ALTO_GATO, "#22c55e"); // verde neon
+    ctx.drawImage(imagenGato, gatoX, gatoY, ANCHO_GATO, ALTO_GATO);
 }
 
-// COMIDA
+// 🍎 COMIDA
 function graficarComida() {
-    graficarRectangulo(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA, "#ff003c"); // rojo neon
+    graficarRectangulo(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA, "#ff003c");
 }
 
 // LIMPIAR
@@ -69,7 +77,7 @@ function moverDerecha() {
     actualizar();
 }
 
-// TECLADO (PRO)
+// TECLADO
 function controlarTeclado(e) {
     if (e.key === "ArrowUp") moverArriba();
     if (e.key === "ArrowDown") moverAbajo();
@@ -77,7 +85,7 @@ function controlarTeclado(e) {
     if (e.key === "ArrowRight") moverDerecha();
 }
 
-// DETECTAR COLISION
+// COLISION
 function detectarColision() {
     if (
         gatoX < comidaX + ANCHO_COMIDA &&
@@ -87,13 +95,15 @@ function detectarColision() {
     ) {
         puntos++;
         document.getElementById("puntos").textContent = puntos;
-        // bajar tiempo 
+
+        // reducir tiempo progresivamente
         tiempoMaximo--;
-       if (tiempoMaximo < 3) {
-        tiempoMaximo = 3;
-       }
-       tiempo = tiempoMaximo;
-        document.getElementById("tiempo").textcontent = tiempo;
+        if (tiempoMaximo < 3) {
+            tiempoMaximo = 3;
+        }
+
+        tiempo = tiempoMaximo;
+        document.getElementById("tiempo").textContent = tiempo;
 
         moverComida();
     }
@@ -146,5 +156,4 @@ function reiniciarJuego() {
 function iniciarJuego() {
     document.addEventListener("keydown", controlarTeclado);
     iniciarTiempo();
-    dibujar();
 }
